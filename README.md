@@ -109,6 +109,6 @@ One thing that changed from the spec: I originally planned to parse size with ju
 
 ## AI Usage
 
-**search_listings:** I gave Claude the Tool 1 spec block from planning.md — inputs, return value, the failure mode, and the instruction to use `load_listings()`. The code it generated only scored against title and style_tags. I overrode that to also include description and colors, because otherwise queries like "rust corduroy" or "black boots" didn't surface the right results.
+**search_listings:** I used the Tool 1 spec from planning.md. The first version only scored title and style_tags, so I expanded it to also consider description and colors for better matches.
 
-**run_agent() planning loop:** I gave Claude the architecture diagram from planning.md and asked it to implement `run_agent()` following the TODO steps in agent.py. The generated version put the empty-results branch after `selected_item` was already assigned, which would have let a `None` slip through if the branch condition ever misfired. I moved the check to right after `search_results` is set, before `selected_item` gets touched — matching what the spec actually described.
+**run_agent() planning loop:** I used the architecture diagram from planning.md to implement `run_agent()`. I moved the empty-results check earlier so `selected_item` is never assigned when search returns nothing.
