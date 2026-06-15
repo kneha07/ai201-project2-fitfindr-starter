@@ -2,6 +2,8 @@
 
 I built this for the agent project — it's a tool that helps you find secondhand clothes and figure out how to actually wear them. You type in what you're looking for, it searches a mock thrift dataset, suggests an outfit using stuff you already own, and spits out a little caption you could use for a post.
 
+**Demo video:** https://www.loom.com/share/141b4eb7aff940b5b0445c815200ac56
+
 ---
 
 ## Setup
